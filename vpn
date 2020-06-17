@@ -1,0 +1,17 @@
+dev tun
+persist-tun
+persist-key
+cipher AES-128-CBC
+ncp-ciphers AES-128-GCM
+auth SHA256
+tls-client
+client
+resolv-retry infinite
+remote 192.168.21.100 1194 udp4
+lport 0
+verify-x509-name "OpenVPN-Server-Certificate" name
+remote-cert-tls server
+ca OpenVPN-CA.crt
+cert client-certificate.crt
+key client-certificate.key
+tls-auth ta.key 1
