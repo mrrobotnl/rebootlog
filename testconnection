@@ -1,0 +1,44 @@
+from pythonping import ping
+
+
+
+#alle belangrijke adressen 
+Router = '172.16.100.254'
+find3ser = '172.16.100.2'
+Monitoringssysteem = '172.16.100.15'
+internet  = '8.8.8.8' 
+#modules 
+def pingrouter():
+    x = "pfsense router"
+    ping(Router, verbose=False)
+    if ping == 0:
+        print("Er is verbinding met ", x)
+    else:
+        print("Er is momenteel geen verbinding met  ", x) 
+def pingfind3server():
+    y = "find 3 server"
+    ping(find3ser, verbose=False)
+    if ping == 0:
+        print("er is een verbinding met", y)
+    else:
+        print("er is momentel geen verbinding met,",y)
+def pingmonitoringssystem():
+    z = "monitorsysteem"
+    ping(Monitoringssysteem, verbose=False)
+    if ping == 0:
+        print("Er is een momenteel wel verbinding mogelijk met ", z)
+    else:
+        print("Er is momenteel geen verbinding mogelijk met", z)
+def pingnetwork():
+    q = "Internet"
+    ping(internet, verbose=False)
+    if ping == 0:
+       print("er is momenteel geen een verbinding mogelijk ", q)
+    else:
+        print("Er is momenteel wel verbinding mogelijk met", q)
+
+
+pingrouter()
+pingfind3server()
+pingmonitoringssystem()
+pingnetwork()
